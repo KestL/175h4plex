@@ -26,6 +26,7 @@ def MainMenu():
 	mlist = JSON.ObjectFromString(r)
 
 	global movies
+	movies=[]
 	for mlink in mlist:
 		r = HTTP.Request(BASE_URL + mlink + '/a.js').content
 		r = "{%s}" % (r.split('{', 1)[1].rsplit('}', 1)[0])
